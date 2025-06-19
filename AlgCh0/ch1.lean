@@ -62,4 +62,9 @@ example : (7, 7) ∈ CartesianProduct greater_than_5 greater_than_6 := by
   rw [greater_than_6]
   simp
 
+def finite (S : Set α) : Prop :=
+  ∃ (n : ℕ) (f : {x : α // x ∈ S} → ℕ), Function.Injective f ∧ ∀ x, f x < n
+
+def emptyset (α : Type) : Set α := fun _ => False
+
 end MySet
